@@ -1,0 +1,61 @@
+.cat-btn {
+    &:hover {
+        background-color: rgb(232, 233, 234);
+    }
+
+    &:active {
+        background-color: rgb(255, 255, 255);
+        box-shadow: rgba(59, 65, 68, 0.4) 0px 8px 20px -15px;
+        color: rgb(0, 120, 130);
+        border-color: rgb(232, 233, 234);
+        outline: none;
+    }
+
+    cursor: pointer;
+    display: inline-block;
+    color: rgb(59, 65, 68);
+    text-align: center;
+    font-weight: bold;
+    white-space: nowrap;
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 0px;
+    border-radius: 8px;
+    border-width: 1px;
+    border-style: solid;
+    transition: top 0.1s ease 0s, box-shadow 0.1s ease 0s, border-color 0.1s ease 0s, background-color 0.1s ease 0s, color 0.1s ease 0s;
+    padding: 8px 16px;
+    outline: none;
+    margin: 2px;
+
+    /* not-active */
+    background-color: transparent;
+    margin-bottom: 16px;
+    border-color: transparent;
+}
+
+.cat-btn-active {
+    cursor: pointer;
+    display: inline-block;
+    color: rgb(59, 65, 68);
+    text-align: center;
+    font-weight: bold;
+    white-space: nowrap;
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 0px;
+    border-radius: 8px;
+    border-width: 1px;
+    border-style: solid;
+    transition: top 0.1s ease 0s, box-shadow 0.1s ease 0s, border-color 0.1s ease 0s, background-color 0.1s ease 0s, color 0.1s ease 0s;
+    padding: 8px 16px;
+    outline: none;
+    margin: 2px;
+    
+    /* active */
+    background-color: rgb(255, 255, 255);
+    box-shadow: rgba(59, 65, 68, 0.4) 0px 8px 20px -15px;
+    color: rgb(0, 120, 130);
+    border-color: rgb(232, 233, 234);
+    outline: none;
+}

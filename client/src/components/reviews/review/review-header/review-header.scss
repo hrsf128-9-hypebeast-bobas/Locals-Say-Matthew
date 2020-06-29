@@ -1,0 +1,84 @@
+.review-header {
+    width: 100%;
+    flex-direction: row;
+    -webkit-box-align: center;
+    align-items: center;
+    display: flex;
+
+    .icon-circle-box {
+        background-color: rgb(255, 255, 255);
+        color: rgb(134, 144, 153);
+        width: 32px;
+        height: 32px;
+        min-width: 32px;
+        min-height: 32px;
+        display: flex;
+        -webkit-box-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        justify-content: center;
+        border-radius: 200px;
+        overflow: hidden;
+
+        .svg-container {
+            display: inline-block;
+            font-size: 0px;
+            width: 24px !important;
+            height: 24px !important;
+        }
+    }
+
+    .user-info {
+        display: block;
+        box-sizing: border-box;
+        margin-left: 8px;
+
+        .user-name {
+            font-weight: bold;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            font-family: TruliaSans, system, -apple-system, Roboto, "Segoe UI Bold", Arial, sans-serif;
+            font-size: 16px;
+            line-height: 1.5;
+            letter-spacing: -0.1px;
+        }
+
+        .user-data-container {
+            font-size: 12px;
+            line-height: 1.33;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            display: block;
+
+            .user-data {
+                display: block;
+                margin-block-start: 1em;
+                margin-block-end: 1em;
+                margin-inline-start: 0px;
+                margin-inline-end: 0px;
+                padding-inline-start: 40px;
+                margin: 0px;
+                padding: 0px;
+                list-style: none;
+                font-size: 12px;
+                line-height: 1.33;
+                white-space: nowrap;
+                outline: none;
+                letter-spacing: -0.1px;
+
+                li {
+                    display: inline-block;
+                }
+
+                .review-date {
+                    &:before {
+                        content: "•";
+                        margin: 0px 4px;
+                    }
+                }
+            }
+        }
+    }
+}

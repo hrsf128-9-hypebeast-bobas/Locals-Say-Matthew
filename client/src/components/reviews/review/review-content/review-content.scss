@@ -1,0 +1,36 @@
+.content-container {
+    order: 2;
+    flex: 1 1 auto;
+
+    .content-padding {
+        padding: 24px 0px;
+
+        .content {
+            .fade {
+                content: "";
+                position: absolute;
+                bottom: 0px;
+                left: 0px;
+                right: 0px;
+                height: 40.8px;
+                z-index: 10;
+            }
+
+            font-size: 20px;
+            line-height: 1.2;
+            max-height: calc(168px);
+            position: relative;
+            min-height: calc(168px);
+            overflow: hidden;
+
+            i {
+                font-size: 20px;
+                line-height: 1.2;
+                max-height: calc(168px);
+                position: relative;
+                min-height: calc(168px);
+                overflow: hidden;
+            }
+        }
+    }
+}

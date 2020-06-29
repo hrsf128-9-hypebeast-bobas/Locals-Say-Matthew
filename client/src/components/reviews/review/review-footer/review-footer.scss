@@ -1,0 +1,35 @@
+.footer-container {
+    order: 3;
+
+    .footer {
+        flex-direction: row;
+        -webkit-box-align: center;
+        align-items: center;
+        display: flex;
+        color: rgb(255, 255, 255);
+        width: 100%;
+
+
+        .helpful {
+            flex-direction: row;
+            -webkit-box-align: center;
+            align-items: center;
+            display: flex;
+
+            .svg-container {
+                display: inline-block;
+                font-size: 0px;
+                width: 24px !important;
+                height: 24px !important;
+            }
+
+            .count {
+                margin-left: 8px;
+            }
+        }
+    }
+}
+
+.helpful-container {
+    width: 100%;
+}

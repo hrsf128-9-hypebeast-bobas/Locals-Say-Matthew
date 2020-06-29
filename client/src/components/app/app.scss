@@ -1,0 +1,175 @@
+#what-they-say {
+    max-width: 960px;
+    margin: auto;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+    .flex-container {
+        width: 100%;
+        background-color: rgb(245, 246, 247);
+        border-radius: 8px;
+        overflow: hidden;
+        padding: 16px;
+
+        .what-locals-say {
+            font-family: TruliaSans;
+            font-size: 24px;
+            font-weight: bold;
+            font-style: normal;
+            font-stretch: normal;
+            line-height: 1.5;
+            letter-spacing: normal;
+            text-align: left;
+            color: rgb(59, 65, 68);
+            margin-top: 16px;
+            margin-bottom: 12px;
+        }
+
+        #what-is-said {
+            #how-many {
+                padding: 0px 0px 24px;
+                color: rgb(134, 144, 153);
+            }
+
+            .see-toggle {
+                font-family: TruliaSans, system, -apple-system, Roboto, "Segoe UI Bold", Arial, sans-serif;
+                color: rgb(59, 65, 68);
+                font-size: 16px;
+                line-height: 1.5;
+                letter-spacing: -0.1px;
+                margin: 0px;
+                padding: 0px 0px 4px;
+
+                button {
+                    &:hover {
+                        color: rgb(59, 65, 68);
+                        background-color: rgb(232, 233, 234);
+                        border-color: transparent;
+                    }
+
+                    &active {
+                        color: rgb(255, 255, 255);
+                        background-color: rgb(134, 144, 153);
+                        border-color: transparent;
+                    }
+
+                    cursor: pointer;
+                    display: inline-block;
+                    text-align: center;
+                    font-weight: bold;
+                    white-space: nowrap;
+                    font-size: 16px;
+                    line-height: 1.5;
+                    color: rgb(59, 65, 68);
+                    background-color: rgb(255, 255, 255);
+                    margin: 0px;
+                    border-radius: 8px;
+                    border-width: 1px;
+                    border-style: solid;
+                    transition: top 0.1s ease 0s, box-shadow 0.1s ease 0s, border-color 0.1s ease 0s, background-color 0.1s ease 0s, color 0.1s ease 0s;
+                    padding: 8px 16px;
+                    border-color: rgb(205, 209, 212);
+                    outline: none;
+                }
+            }
+
+            #methodology {
+                font-family: TruliaSans, system, -apple-system, Roboto, "Segoe UI Bold", Arial, sans-serif;
+                color: rgb(59, 65, 68);
+                font-size: 16px;
+                line-height: 1.5;
+                letter-spacing: -0.1px;
+                margin: 0px;
+                padding: 0px 0px 24px;
+
+                span {
+                    color: rgb(134, 144, 153);
+                    font-size: 12px;
+                    line-height: 1.33;
+                    outline: none;
+
+                    a {
+                        color: rgb(0, 120, 130);
+                        text-decoration: none;
+                        cursor: pointer;
+                    }
+                }
+            }
+
+            section {
+                display: flex;
+                -webkit-box-pack: center;
+                justify-content: center;
+                -webkit-box-align: center;
+                align-items: center;
+                padding-top: 16px;
+
+                button {
+                    cursor: pointer;
+                    display: inline-block;
+                    text-align: center;
+                    font-weight: bold;
+                    white-space: nowrap;
+                    font-size: 16px;
+                    line-height: 1.5;
+                    background-color: rgb(255, 255, 255);
+                    color: rgb(0, 86, 93);
+                    width: 250px;
+                    height: 44px;
+                    box-shadow: none;
+                    margin: 0px 0px 16px;
+                    border-radius: 8px;
+                    transition: top 0.1s ease 0s, box-shadow 0.1s ease 0s, border-color 0.1s ease 0s,
+                        background-color 0.1s ease 0s, color 0.1s ease 0s;
+                    padding: 8px 16px;
+                    border-width: 1px;
+                    border-style: solid;
+                    border-color: rgb(232, 233, 234);
+                    border-image: initial;
+                }
+            }
+        }
+    }
+}
+
+.see-btn {
+    &:hover {
+        color: rgb(59, 65, 68);
+        background-color: rgb(232, 233, 234);
+        border-color: transparent;
+    }
+
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+    font-weight: bold;
+    white-space: nowrap;
+    font-size: 16px;
+    line-height: 1.5;
+    color: rgb(59, 65, 68);
+    background-color: rgb(255, 255, 255);
+    margin: 0px;
+    border-radius: 8px;
+    border-width: 1px;
+    border-style: solid;
+    transition: top 0.1s ease 0s, box-shadow 0.1s ease 0s, border-color 0.1s ease 0s, background-color 0.1s ease 0s,
+        color 0.1s ease 0s;
+    padding: 8px 16px;
+    border-color: rgb(205, 209, 212);
+    outline: none;
+}
+
+.learn-more {
+    padding: 0px 0px 24px;
+
+    & > span {
+        color: rgb(134, 144, 153);
+        font-size: 12px;
+        line-height: 1.33;
+
+        & > a {
+            color: rgb(0, 120, 130);
+            text-decoration: none;
+            outline: none;
+        }
+    }
+}

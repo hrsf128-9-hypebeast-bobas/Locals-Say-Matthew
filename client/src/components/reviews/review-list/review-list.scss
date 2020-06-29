@@ -1,0 +1,13 @@
+#review-list {
+    width: 100%;
+    overflow: hidden;
+
+    #review-list-container {
+        display: flex;
+        margin-left: -8px;
+        margin-right: -8px;
+        margin-top: -16px;
+        flex-wrap: nowrap;
+        width: 100%;
+    }
+}

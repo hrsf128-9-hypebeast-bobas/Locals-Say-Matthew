@@ -1,0 +1,10 @@
+#feature-list {
+    display: flex;
+    flex-direction: row;
+    flex: 1 1 auto;
+    flex-wrap: wrap;
+
+    & > div {
+        width: calc(33.333333% - 24px);
+    }
+}
