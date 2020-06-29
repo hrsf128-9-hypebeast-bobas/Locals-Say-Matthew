@@ -7,5 +7,5 @@ ReactDOM.render(
     <div style={{ paddingTop: '50px'}}>
         <App/>
     </div>,
-    document.getElementById("app")
+    document.getElementById("locals-say")
 );
