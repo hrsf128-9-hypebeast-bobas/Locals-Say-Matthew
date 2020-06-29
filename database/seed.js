@@ -17,6 +17,11 @@ db.once("open", function () {
   console.log(`Connected to MongoDB on ${db.host}:${db.port}`);
   seedFeatures();
   seedReviews();
+
+  Promise.all([seedFeatures(), seedReviews()])
+    .then( results => mongoose.disconnect())
+    .catch((err) => console.log(err));
+
 });
 
 function seedFeatures() {
