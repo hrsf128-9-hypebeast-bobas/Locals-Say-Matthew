@@ -18,7 +18,8 @@ type AppState = {
     activeReviewType: string;
     seeMoreFeatures: boolean;
     features: IFeature[],
-    reviews: IReview[]
+    reviews: IReview[],
+    slideVal: string
 }
 
 interface AppProps { }
@@ -30,7 +31,8 @@ export class App extends React.Component<{}, AppState> {
             activeReviewType: 'All',
             seeMoreFeatures: false,
             features: [],
-            reviews: []
+            reviews: [],
+            slideVal: '0'
         }
 
         axios.get('/features')
@@ -66,6 +68,13 @@ export class App extends React.Component<{}, AppState> {
         })
     }
 
+    toggleSlide() {
+        console.log("toggle")
+        this.setState({
+            slideVal: this.state.slideVal === '0' ? '-100' : '0'
+        })
+    }
+
     render() {
         return (
             <div id="what-they-say">
@@ -82,7 +91,7 @@ export class App extends React.Component<{}, AppState> {
                                 <span><a href="/" target="_blank">Learn more</a> about our methodology.</span>
                             </div> 
                             <ReviewButtonList categories={categories} active={this.state.activeReviewType} setActive={this.setActiveState.bind(this)}/>
-                            <ReviewList reviews={this.filterActiveReviews(this.state.reviews)} />
+                            <ReviewList reviews={this.filterActiveReviews(this.state.reviews)} slideVal={this.state.slideVal} toggleSlide={this.toggleSlide.bind(this)}/>
                             <section>
                                 <button type="button">Add Your Review</button>
                             </section>
