@@ -13,29 +13,32 @@ mongoose.connect("mongodb://localhost/locals-say", {
 });
 const db = mongoose.connection;
 db.on("error", console.error.bind(console, "connection error:"));
+db.on("disconnected", console.error.bind(console, "connection closed:"));
 db.once("open", function () {
   console.log(`Connected to MongoDB on ${db.host}:${db.port}`);
-  seedFeatures();
-  seedReviews();
-
-  Promise.all([seedFeatures(), seedReviews()])
-    .then( results => console.log(results))
-    .catch((err) => console.log(err));
-
+  seed();
 });
 
+async function seed() {
+  await seedFeatures();
+  await seedReviews();
+  mongoose.disconnect();
+}
+
 function seedFeatures() {
-  fs.readFileAsync("./database/seed-data/locals-say-features.json")
+  return fs.readFileAsync("./database/seed-data/locals-say-features.json")
     .then((data) => JSON.parse(data))
     .then((data) => data.filter((item) => item.pathData)) // remove after addressing special case
     .then((data) => {
       console.log("\n\nseeding features:\n");
+      let features = [];
       data.forEach((item) => {
         console.log(`creating '${item.text}' feature object`);
         let feature = new FeatureModel(item);
         feature.helpfulPercent = Math.floor(Math.random() * 50) + 50;
-        feature.save();
+        features.push(feature);
       });
+      return FeatureModel.insertMany(features);
     })
     .catch((err) => console.log(err));
 }
@@ -43,10 +46,11 @@ function seedFeatures() {
 function seedReviews() {
   const reviewCount = ran(40, 15);
   const reviewType = [ "Community", "Dog Owners", "Parents", "Commute" ];
-  fs.readFileAsync("./database/seed-data/inspirational-reviews.json")
+  return fs.readFileAsync("./database/seed-data/inspirational-reviews.json")
     .then((data) => JSON.parse(data))
     .then((data) => {
       console.log("\n\nseeding reviews:\n");
+      let reviews = [];
       const jump = Math.floor(data.length / reviewCount)
       for (let i = 1; i <= reviewCount; i++) {
         let index = i * jump - jump, name = shortenName(data[index].from);
@@ -57,8 +61,9 @@ function seedReviews() {
           reviewType: reviewType[ran(4)],
           likes: ran(30, 15)
         });
-        review.save();
+        reviews.push(review);
       }
+      return ReviewModel.insertMany(reviews);
     })
     .catch((err) => console.log(err));
 
