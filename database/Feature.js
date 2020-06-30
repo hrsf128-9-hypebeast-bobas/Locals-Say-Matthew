@@ -4,7 +4,8 @@ const Schema = mongoose.Schema;
 const featureSchema = new Schema({
     text: {
         type: String,
-        required: true
+        required: true,
+        unique: true
     },
     pathData: { 
         d: {

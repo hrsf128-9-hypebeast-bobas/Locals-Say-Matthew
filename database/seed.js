@@ -19,7 +19,7 @@ db.once("open", function () {
   seedReviews();
 
   Promise.all([seedFeatures(), seedReviews()])
-    .then( results => mongoose.disconnect())
+    .then( results => console.log(results))
     .catch((err) => console.log(err));
 
 });
